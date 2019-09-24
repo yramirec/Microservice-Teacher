@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: microservice-teacher
+    
+  cloud:
+    config:
+      uri: http://localhost:8888
