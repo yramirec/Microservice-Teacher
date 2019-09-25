@@ -27,7 +27,7 @@ private String id;
 
   @EqualsAndHashCode.Exclude
   @NotBlank(message = "'Name' is required")
-private String Name;
+private String name;
 
   @EqualsAndHashCode.Exclude
   @NotBlank(message = "'Geneder' is required")
