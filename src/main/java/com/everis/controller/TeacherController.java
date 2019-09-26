@@ -53,7 +53,7 @@ public class TeacherController {
    public Mono<ResponseEntity<Teacher>> createTeacher(@RequestBody @Valid Teacher teacher) {
     Teacher teacherToCrete = teacher.toBuilder().id(null).build();
     return teacherService.create(teacherToCrete).map(
-        newTeacher -> ResponseEntity.created(URI.create("/Teachers/" + newTeacher.getId()))
+        newTeacher -> ResponseEntity.created(URI.create("/teachers/" + newTeacher.getId()))
         .body(newTeacher));
   }
 
@@ -70,7 +70,7 @@ public class TeacherController {
         .defaultIfEmpty(ResponseEntity.notFound().build());
   }
 
-  @GetMapping("/searchByName/{fullName}")
+  @GetMapping("/searchByName/{name}")
    public Flux<Teacher> findByName(@PathVariable String name) {
     return teacherService.findByName(name);
   }

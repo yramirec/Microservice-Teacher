@@ -45,8 +45,9 @@ private String typeDocument;
   @NotNull(message = "'Number Document' is required")
   @Positive(message = "'Number' must be greater than zero")
 private int numberDocument;
-
+  
+  @EqualsAndHashCode.Exclude
   @NotBlank(message = "'Family' is required")
-  private String idFamily;  
+private String idFamily;  
 
 }
